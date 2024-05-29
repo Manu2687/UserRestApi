@@ -1,0 +1,21 @@
+{
+    "id": 2,
+    "name": "mansi",
+    "email": "abcchsdbh",
+    "phoneNumbers": [
+        {
+            "id": 1,
+            "number": "8123456789"
+        }
+    ],
+    "addresses": [
+        {
+            "id": 2,
+            "address": "abc"
+        },
+        {
+            "id": 3,
+            "address": "pqr"
+        }
+    ]
+}
