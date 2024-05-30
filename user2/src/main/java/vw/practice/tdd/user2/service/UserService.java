@@ -36,10 +36,17 @@ public class UserService {
 	    }
 	    
 	    public User updateUser(int id, User user) {
-	    	if(userRepository.findById(id)!=null) {
-	    		return userRepository.save(user);
-	    	} 
-	    	return null;
+	    	Optional<User> u = userRepository.findById(id);
+	    	
+	    	if(u.isPresent()) {
+	    		User u2 = u.get();
+	    		u2.setEmail(user.getEmail());
+	    		u2.setPhoneNumbers(user.getPhoneNumbers());
+	    		u2.setAddresses(user.getAddresses());
+	    		u2.setName(user.getName());
+	    		return userRepository.save(u2);
+	    	}
+	    	return userRepository.save(user);
 	    }
 
 	    public List<User> getUsersWithMultipleAddressesAndPhoneNumber() {
